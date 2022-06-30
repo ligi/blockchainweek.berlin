@@ -22,12 +22,14 @@ export const languages = [
 ]
 
 export const EVENT_CATEGORIES = [
-  { label: 'ALL' },
-  { label: 'Favorites' },
-  { label: 'Events' },
-  { label: 'Hackathons' },
-  { label: 'Workshops' },
-  { label: 'Drinks' },
+  { label: 'all' },
+  { label: 'favorites' },
+  { label: 'conference'},
+  { label: 'event/meetup' },
+  { label: 'hackathon' },
+  { label: 'workshop' },
+  { label: 'drinks/party' },
+  { label: 'other' },
 ]
 
 export const WEEK = {

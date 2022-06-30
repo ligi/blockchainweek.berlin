@@ -80,7 +80,7 @@ export default {
       days: WEEK,
       options: EVENT_CATEGORIES,
       eventsUrl: EVENTS_URL,
-      selected: { label: 'All' },
+      selected: { label: 'all' },
       filteredEvents: [],
       selectedEvents: [],
       currentDay: '12',
@@ -204,9 +204,9 @@ export default {
     },
     updateSelected(selectedOption) {
       this.selected = selectedOption
-      if (this.selected.label === 'All') {
+      if (this.selected.label === 'all') {
         this.selectedEvents = this.events
-      } else if (this.selected.label === 'Favorites') {
+      } else if (this.selected.label === 'favorites') {
         this.selectedEvents = this.events.filter((event) => {
           return event.favorite
         })
