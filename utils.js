@@ -1,41 +1,43 @@
 import { format, utcToZonedTime, toDate, zonedTimeToUtc } from 'date-fns-tz'
 import { formatISO } from 'date-fns'
 
-const timeZone = 'Europe/Lisbon'
+const timeZone = 'Europe/Berlin'
 
-function getLisbonDate(timestamp) {
+function getBerlinDate(timestamp) {
   return utcToZonedTime(new Date(timestamp), timeZone)
 }
 
-function getUtcFromLisbonTime(timestamp) {
+function getUtcFromBerlinTime(timestamp) {
   return zonedTimeToUtc(timestamp, timeZone)
 }
 
 export function getTime(timestamp) {
-  return format(getLisbonDate(timestamp), 'HH:mm', { timeZone })
+  return format(getBerlinDate(timestamp), 'HH:mm', { timeZone })
 }
 
 export function getCalendarDate(timestamp) {
-  return formatISO(getUtcFromLisbonTime(timestamp), { format: 'basic' })
+  return formatISO(getUtcFromBerlinTime(timestamp), { format: 'basic' })
 }
 
 export function getDate(timestamp) {
-  return format(getLisbonDate(timestamp), 'dd-MM-yyyy', { timeZone })
+  return format(getBerlinDate(timestamp), 'dd-MM-yyyy', { timeZone })
 }
 
 export function getDay(timestamp) {
-  return format(getLisbonDate(timestamp), 'dd', { timeZone })
+  return format(getBerlinDate(timestamp), 'dd', { timeZone })
 }
 
 export function getTimestampFromDateAndTime(date, time) {
   const [month, day, year] = date.split('/')
   const [hour, min] = convertTime12to24(time).split(':')
   const fullHour = hour.length === 2 ? hour : '0' + hour
+  const fullDay = day.length === 2 ? day : '0' + day
+  const fullMonth = month.length === 2 ? month : '0' + month
   const fullYear = year.length === 2 ? '20' + year : year
-  const dateString = `${fullYear}-${month}-${day}T${fullHour}:${min}:00+01:00`
-  const lisbonDate = toDate(dateString)
+  const dateString = `${fullYear}-${fullMonth}-${fullDay}T${fullHour}:${min}:00+02:00`
+  const berlinDate = toDate(dateString)
 
-  return lisbonDate.getTime()
+  return berlinDate.getTime()
 }
 
 export function convertTime12to24(time12h) {

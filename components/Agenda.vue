@@ -1,15 +1,17 @@
 <template>
   <div class="agenda">
     <div class="header">
-      <h2 class="text">October 2021</h2>
+      <div class="text">EVENTS</div>
+      <a :href="submitUrl" target="_blank"><Button>Submit event</Button></a>
+    </div>
+    <div class="content">
       <Select
         class="select"
         :options="options"
         :default-option="selected"
         @update-selected="updateSelected"
       />
-    </div>
-    <div class="content">
+      <hr class="onlyDesktop" />
       <div class="day-switch">
         <div
           v-for="day in days"
@@ -18,7 +20,7 @@
           :class="{ current: currentDay === day.key }"
           @click="setCurrentDay(day.key)"
         >
-          <p>{{ day.name }}</p>
+          <p class="onlyDesktop">{{ day.name }}</p>
           <p>{{ day.key }}</p>
         </div>
       </div>
@@ -67,19 +69,21 @@
 
 <script>
 import { fetchEvents } from '../fetchEvents'
-import { getDate, getDay } from '../utils'
+import { getDay } from '../utils'
 import { EVENT_CATEGORIES, WEEK, EVENTS_URL } from '~/constants.js'
+import { SUBMIT_EVENT_URL } from '~/constants'
 
 export default {
   data() {
     return {
+      submitUrl: SUBMIT_EVENT_URL,
       days: WEEK,
       options: EVENT_CATEGORIES,
       eventsUrl: EVENTS_URL,
       selected: { label: 'All' },
       filteredEvents: [],
       selectedEvents: [],
-      currentDay: '18',
+      currentDay: '12',
       currentEvent: null,
       isModalVisible: false,
       events: [],
@@ -178,14 +182,22 @@ export default {
     filterEvents(events) {
       const eventsToFilter = events || this.events
       const isTimeForEvent = this.days[this.currentDay].timestamp
+      const endForLastDay =
+        this.days[this.keyDays[this.keyDays.length - 1]].timestamp + 86400000
+
       if (!isTimeForEvent) {
         this.currentDay = this.keyDays[0]
       }
       this.filteredEvents = eventsToFilter
         .filter((event) => {
+          const upperLimit =
+            this.days[(parseInt(this.currentDay) + 1).toString()] !== undefined
+              ? this.days[(parseInt(this.currentDay) + 1).toString()].timestamp
+              : endForLastDay
+
           return (
-            getDate(event.startTimestamp) ===
-            getDate(this.days[this.currentDay].timestamp || 0)
+            event.startTimestamp < upperLimit &&
+            event.endTimestamp > this.days[this.currentDay].timestamp
           )
         })
         .sort((ev1, ev2) => ev1.startTimestamp - ev2.startTimestamp)
@@ -218,39 +230,55 @@ export default {
 .appear-leave-active {
   transition: all 0.3s ease-in-out;
 }
-.appear-enter,
-.appear-leave-to {
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
 .current {
-  color: $red;
+  color: $yellow;
+  background-color: $black;
   &.label {
     border: 1px solid $red;
   }
 }
 .agenda {
+  background-color: $yellow;
   display: grid;
   grid-template: max-content 1fr / 1fr;
-  grid-row-gap: 34px;
+  row-gap: 34px;
   justify-content: center;
+  padding-bottom: 100px;
+
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $grey;
     padding: 34px 0;
-    font-family: JoystixMonospace, sans-serif;
+    width: 1200px;
+    margin: 0px auto;
+
+    .text {
+      font-size: 64px;
+    }
   }
   .content {
+    max-width: 1200px;
+    margin: 0px auto;
     display: grid;
     grid-template: max-content 1fr / 1fr;
-    grid-row-gap: 34px;
+    row-gap: 0px;
+
+    .select {
+      margin-bottom: 30px;
+    }
+    hr {
+      border: 1px solid $black;
+    }
+
     .day-switch {
       display: flex;
       justify-content: space-around;
+      width: 1200px;
+      margin-bottom: 50px;
     }
     .row {
+      background-color: $white;
       display: grid;
       grid-template-columns: max-content auto auto 1fr;
       padding: 24px;
@@ -258,7 +286,7 @@ export default {
       grid-column-gap: 34px;
       align-items: center;
       justify-content: center;
-      border-bottom: 1px solid $grey;
+      border-bottom: 2px solid $black;
     }
     .svg-container {
       cursor: pointer;
@@ -278,10 +306,13 @@ export default {
       }
 
       .label {
-        border: 1px solid $black;
+        border: 2px solid $black;
+        border-radius: 80px;
         width: max-content;
-        padding: 4px 8px;
+        padding: 5px 24px;
         margin: 8px;
+        font-size: 16px;
+        text-transform: uppercase;
       }
       .current {
         &.label {
@@ -290,46 +321,79 @@ export default {
       }
     }
     .day {
-      margin: 16px;
-      font-size: 24px;
+      width: 104px;
+      padding: 16px 8px;
+      font-size: 50px;
+      font-family: 'NeueBitBold', 'Courier New', Arial, Helvetica, sans-serif;
       cursor: pointer;
       text-align: center;
     }
   }
 }
-@media (max-width: 780px) {
+@media (max-width: 1200px) {
   .agenda {
     justify-content: flex-start;
+    row-gap: 0px;
     .header {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      width: initial;
+      margin: 0px 20px;
       .select {
         align-self: flex-end;
         margin-top: 24px;
       }
+
+      .button {
+        font-size: 20px;
+      }
     }
     .content {
-      grid-template-columns: 70px 1fr;
+      // grid-template-columns: 70px 1fr;
       grid-column-gap: 24px;
       justify-content: flex-start;
+      flex-direction: column;
+      width: initial;
+      margin: 0px 20px;
 
       .day-switch {
-        flex-direction: column;
-        justify-content: initial;
+        flex-direction: row;
+        justify-content: center;
         position: sticky;
         top: 0;
-        height: 100vh;
+        // height: 100vh;
+        width: 100%;
+        .day {
+          // background-color: transparent;
+          border-top: 2px solid $black;
+          border-right: 2px solid $black;
+          border-bottom: 2px solid $black;
+          width: initial;
+          min-width: 50px;
+          flex-grow: 1;
+        }
+
+        :first-child {
+          border-left: 2px solid $black;
+        }
       }
 
       .events-list {
         .row {
           display: flex;
           flex-direction: column;
+          justify-content: left;
+          align-items: flex-start;
+          font-size: 20px;
 
           .col {
             text-align: center;
             margin: 8px;
+
+            .label {
+              font-size: 18px;
+            }
 
             &.categories {
               justify-content: center;

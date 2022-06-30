@@ -1,7 +1,6 @@
 import { languages } from './constants'
 import { fallbackLocale } from './default'
 
-// const base = '/lisbon-blockchain-week'
 const base = '/'
 
 export default {
@@ -12,7 +11,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Lisbon Blockchain Week - 2021',
+    title: 'Berlin Blockchain Week 2022',
     htmlAttrs: {
       lang: 'en',
     },
@@ -23,24 +22,24 @@ export default {
       {
         hid: 'title',
         name: 'title',
-        content: 'Lisbon Blockchain Week - 2021',
+        content: 'Berlin Blockchain Week 2022',
       },
       {
         hid: 'description',
         name: 'description',
         content:
-          'The Lisbon Blockchain Week (Oct 18-24, 2021) will gather the greatest BUIDlers in crypto and Web3 for an entire week full of community-organized events, conferences, parties, and surprises!',
+          'Blockchain Week Berlin is a decentralized community-organized initiative. There is no single owner. It is an agnostic movement based on the premise that self-organization is the backbone of the ecosystem. We invite projects, individuals and anyone interested in fruitful and educational discussions to join us in Berlin in September.',
       },
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Lisbon Blockchain Week - 2021',
+        content: 'Berlin Blockchain Week - 2022',
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
         content:
-          'The Lisbon Blockchain Week (Oct 18-24, 2021) will gather the greatest BUIDlers in crypto and Web3 for an entire week full of community-organized events, conferences, parties, and surprises!',
+          'Blockchain Week Berlin is a decentralized community-organized initiative. There is no single owner. It is an agnostic movement based on the premise that self-organization is the backbone of the ecosystem. We invite projects, individuals and anyone interested in fruitful and educational discussions to join us in Berlin in September.',
       },
       // {
       //   hid: 'twitter:image',
@@ -55,13 +54,13 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Lisbon Blockchain Week - 2021',
+        content: 'Berlin Blockchain Week - 2022',
       },
       {
         hid: 'og:description',
         property: 'og:description',
         content:
-          'The Lisbon Blockchain Week (Oct 18-24, 2021) will gather the greatest BUIDlers in crypto and Web3 for an entire week full of community-organized events, conferences, parties, and surprises!',
+          'Blockchain Week Berlin is a decentralized community-organized initiative. There is no single owner. It is an agnostic movement based on the premise that self-organization is the backbone of the ecosystem. We invite projects, individuals and anyone interested in fruitful and educational discussions to join us in Berlin in September.',
       },
       // {
       //   hid: 'og:image',
@@ -123,11 +122,17 @@ export default {
     '@nuxtjs/svg',
   ],
 
-  // fontawesome: {
-  //   icons: {
-  //     solid: [],
-  //   },
-  // },
+  fontawesome: {
+    icons: {
+      solid: [
+        'faXmark'
+      ],
+      brands: [
+        'faTwitter',
+        'faTelegram'
+      ],
+    },
+  },
 
   i18n: {
     // add SEO attributes in layout head for better performance

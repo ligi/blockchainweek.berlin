@@ -1,9 +1,9 @@
 export const SUBMIT_EVENT_URL =
   process.env.SUBMIT_EVENT_URL ||
-  'https://docs.google.com/forms/d/e/1FAIpQLSe1ZK-NHycf2ZX4R6DUbKklErE2KyEBnAmsED8BtwBt9XMing/viewform'
+  'https://forms.gle/w2kaQcspJhbx9qPh9'
 export const EVENTS_URL =
   process.env.EVENTS_URL ||
-  'https://raw.githubusercontent.com/otherplane/liscon-week/main/events.csv'
+  'https://raw.githubusercontent.com/joergkiesewetter/blockchainweek.berlin/main/events.csv'
 
 export const DEFAULT_BACKGROUND_IMAGE = process.env.DEFAULT_BACKGROUND_IMAGE
 
@@ -22,7 +22,7 @@ export const languages = [
 ]
 
 export const EVENT_CATEGORIES = [
-  { label: 'All' },
+  { label: 'ALL' },
   { label: 'Favorites' },
   { label: 'Events' },
   { label: 'Hackathons' },
@@ -31,39 +31,39 @@ export const EVENT_CATEGORIES = [
 ]
 
 export const WEEK = {
+  12: {
+    key: '12',
+    timestamp: 1662940800000,
+    name: 'MON',
+  },
+  13: {
+    key: '13',
+    timestamp: 1663027200000,
+    name: 'TUE',
+  },
+  14: {
+    key: '14',
+    timestamp: 1663113600000,
+    name: 'WED',
+  },
+  15: {
+    key: '15',
+    timestamp: 1663200000000,
+    name: 'THU',
+  },
+  16: {
+    key: '16',
+    timestamp: 1663286400000,
+    name: 'FRI',
+  },
+  17: {
+    key: '17',
+    timestamp: 1663372800000,
+    name: 'SAT',
+  },
   18: {
     key: '18',
-    timestamp: 1634515200000,
-    name: 'Mon',
-  },
-  19: {
-    key: '19',
-    timestamp: 1634601600000,
-    name: 'Tue',
-  },
-  20: {
-    key: '20',
-    timestamp: 1634688000000,
-    name: 'Wed',
-  },
-  21: {
-    key: '21',
-    timestamp: 1634774400000,
-    name: 'Thur',
-  },
-  22: {
-    key: '22',
-    timestamp: 1634860800000,
-    name: 'Fri',
-  },
-  23: {
-    key: '23',
-    timestamp: 1634947200000,
-    name: 'Sat',
-  },
-  24: {
-    key: '24',
-    timestamp: 1635033600000,
-    name: 'Sun',
-  },
+    timestamp: 1663459200000,
+    name: 'SUN',
+  }
 }

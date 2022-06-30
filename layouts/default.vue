@@ -13,8 +13,8 @@ export default {
 </script>
 <style lang="scss">
 html {
-  background-color: $beige;
-  font-family: 'SourceCode-Light', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  background-color: $grey2;
+  font-family: 'OpenSauceOne', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -34,5 +34,29 @@ body {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+hr.onlyDesktop {
+  display: block;
+}
+.onlyDesktop {
+  display: initial;
+}
+
+.onlyMobile {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .onlyDesktop {
+    display: none !important;
+  }
+
+  hr.onlyMobile {
+    display: block;
+  }
+  .onlyMobile {
+    display: initial;
+  }
 }
 </style>

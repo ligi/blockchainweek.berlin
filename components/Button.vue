@@ -36,17 +36,17 @@ export default {
   padding: 10px;
 }
 .default {
-  border: 2px solid $blue;
-  background: transparent;
-  color: $blue;
+  border: 2px solid $black;
+  background: $black;
+  color: $yellow;
   &:hover {
     transform: scale(1);
   }
 }
 .primary {
-  border: 2px solid $blue;
-  background: $blue;
-  color: $beige;
+  border: 2px solid $black;
+  background: $black;
+  color: $yellow;
   &:hover {
     transform: scale(1);
   }

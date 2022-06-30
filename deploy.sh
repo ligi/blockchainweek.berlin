@@ -10,7 +10,7 @@ npm run generate
 cd dist
 
 # if you are deploying to a custom domain
-echo 'lisbonblockchainweek.com' > CNAME
+echo 'blockchainweek.berlin' > CNAME
 
 git init
 git add -A
@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:otherplane/lisbon-blockchain-week.git HEAD:gh-pages
+git push -f git@github.com:joergkiesewetter/blockchainweek.berlin.git HEAD:gh-pages
 
 cd -

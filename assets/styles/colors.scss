@@ -1,8 +1,11 @@
 $white: white;
-$black: #30333A;
+$black: #212121;
 $beige: #EFE9E4;
-$transparent-beige: rgba(240, 234, 229, 0.89);
+$transparent-beige: rgba(240, 234, 229, 89%); /* stylelint-disable color-function-notation */
 $blue: #001AFF;
 $red: #D94D49;
 $grey: #C9C9C8;
-$dark-grey: #9c9c9c;
+$dark-grey: #404040;
+$grey2: #F6F6F6;
+$yellow: #EBFF00;
+$overlay: rgba(0, 0, 0, 0.5);

@@ -2,7 +2,6 @@
   <vSelect
     v-model="selected"
     :clearable="false"
-    dir="rtl"
     :filterable="false"
     :options="options"
     :searchable="false"
@@ -54,25 +53,26 @@ export default {
     width: max-content;
     max-width: max-content;
     overflow: hidden;
-    padding: 0;
-    background: $beige;
-    border: 2px solid $blue;
+    padding: 0px 50px;
+    background: $black;
+    border: 2px solid $black;
     border-radius: 0;
     box-shadow: none;
-    color: $blue;
+    color: $yellow;
     font-size: 1rem;
     font-weight: 600;
-    border-bottom-color: $blue !important;
+    border-bottom-color: $black !important;
   }
   .vs__open-indicator {
     font-size: 13px;
-    color: $blue;
+    color: $yellow;
   }
   .vs__dropdown-menu {
-    background: $beige;
+    background: $black;
     top: 50px;
+    padding: 0;
     right: 0;
-    border: 2px solid $blue;
+    border: 2px solid $black;
   }
 
   .vs__dropdown-option {
@@ -80,17 +80,16 @@ export default {
     padding: 10px;
     margin: 4px;
     font-weight: 600;
-    color: $blue;
+    color: $yellow;
   }
 
   .vs__dropdown-option--highlight {
-    background: $blue;
-    color: $beige;
+    background: $dark-grey;
   }
 
   .vs__clear,
   .vs__open-indicator {
-    color: $blue;
+    color: $yellow;
   }
 
   .image {
@@ -99,17 +98,17 @@ export default {
   }
   .vs__selected {
     height: 40px;
-    color: $blue;
+    color: $yellow;
     font-weight: 600;
     margin: 0;
     padding: 0 8px 0 0;
   }
   &:hover {
     .vs__selected {
-      color: $blue;
+      color: $yellow;
     }
     .vs__open-indicator {
-      color: $blue;
+      color: $yellow;
     }
   }
   .vs__actions {
@@ -125,7 +124,7 @@ export default {
   opacity: 1 !important;
   position: inherit !important;
   &.vs__dropdown-toggle {
-    border-bottom-color: $blue !important;
+    border-bottom-color: $black !important;
   }
 }
 </style>

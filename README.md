@@ -1,4 +1,4 @@
-# lisbon-blockchain-week
+# berlin-blockchain-week
 
 ## Build Setup
 

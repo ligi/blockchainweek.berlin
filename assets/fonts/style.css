@@ -1,11 +1,16 @@
 @font-face{
-  font-family:"JoystixMonospace";
-  src: url(joystixMonospace.ttf);
+  font-family:"OpenSauceOne";
+  src: url(OpenSauceOne/OpenSauceOne-Regular.ttf);
 }
 
 @font-face{
-  font-family:"SourceCode-Light";
-  src: url(SourceCodePro_FontsOnly-1.009/SourceCodePro-Light.ttf);
+  font-family:"NeueBit";
+  src: url(NeueBit/PPMondwest-Regular.otf);
+}
+
+@font-face{
+  font-family:"NeueBitBold";
+  src: url(NeueBit/PPNeueBit-Bold.otf);
 }
 
 @font-face{

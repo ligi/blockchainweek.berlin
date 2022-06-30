@@ -2,7 +2,7 @@
   <div class="border">
     <p class="text">
       There are no {{ selectedCategory }} submitted for the {{ day }}. If you
-      are organizing an event during the Lisbon Blockchain Week, click 'SUBMIT
+      are organizing an event during the Berlin Blockchain Week, click 'SUBMIT
       EVENT' button above and fill the form.
     </p>
   </div>

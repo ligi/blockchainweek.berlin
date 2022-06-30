@@ -25,30 +25,26 @@ export function fetchEvents(fileUrl) {
 function normalizeEvent(rawEvent) {
   if (rawEvent['Title of your event']) {
     const startTimestamp = getTimestampFromDateAndTime(
-      rawEvent['Event date'],
-      rawEvent['Starting time']
+      rawEvent['start date'],
+      rawEvent['start time']
     )
     const endTimestamp = getTimestampFromDateAndTime(
-      rawEvent['Event date'],
-      rawEvent['End time']
+      rawEvent['end date'],
+      rawEvent['end time']
     )
 
     return {
       id: `${rawEvent['Title of your event']} ${startTimestamp}`,
-      sponsors: rawEvent['Sponsor(s)'],
-      speakers: rawEvent['Speaker(s)'],
       eventType: rawEvent['Event type'],
       title: rawEvent['Title of your event'],
-      description: rawEvent['Long description of your event'],
+      description: rawEvent['Long description'],
       startTimestamp,
       endTimestamp,
       venue: rawEvent.Venue,
       address: rawEvent.Address,
-      image: rawEvent.Image,
       url: parseUrls(rawEvent['Event URL']),
-      urlNote: rawEvent['Url note'],
-      startTime: convertTime12to24(rawEvent['Starting time']),
-      endTime: convertTime12to24(rawEvent['End time']),
+      startTime: convertTime12to24(rawEvent['start time']),
+      endTime: convertTime12to24(rawEvent['end time']),
       categories: rawEvent['Event type']
         .split(',')
         .map((category) => category.trim()),
