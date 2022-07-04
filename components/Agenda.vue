@@ -1,6 +1,6 @@
 <template>
   <div class="agenda">
-    <div class="header">
+    <div id="events" class="header">
       <div class="text">EVENTS</div>
       <a :href="submitUrl" target="_blank"><Button>Submit event</Button></a>
     </div>
