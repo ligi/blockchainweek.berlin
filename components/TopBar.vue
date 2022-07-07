@@ -2,12 +2,13 @@
   <div class="top">
     <img
       class="headerImageDesktop"
-      :src="require('~/assets/HEADER_DESKTOP.jpg')"
+      :src="require('~/assets/HEADER_DESKTOP.png')"
     />
     <img
       class="headerImageMobile"
-      :src="require('~/assets/HEADER_MOBILE.jpg')"
+      :src="require('~/assets/HEADER_MOBILE.png')"
     />
+    <img class="date" :src="require('~/assets/dates.svg')" />
     <a href="#events" class="toCalendar">VIEW CALENDAR</a>
     <div class="description">
       <div class="descriptionLeft">
@@ -98,18 +99,26 @@
     object-position: 50% 100%;
   }
 
+  .date {
+    position: absolute;
+    top: 35vh;
+    transform: translate(50%, -50%);
+    right: 25%;
+    height: 45vh;
+  }
+
   .toCalendar {
     position: absolute;
-    left: 69%;
-    top: 70vh;
-    right: 19%;
     text-align: center;
     border: white;
     color: black;
     background-color: white;
-    padding: 8px 0px;
-    font-size: 18px;
+    padding: 16px 48px;
+    font-size: 24px;
     text-decoration: none;
+    top: 70vh;
+    transform: translate(50%, -50%);
+    right: 25%;
   }
   .description {
     max-width: 1200px;
@@ -178,10 +187,17 @@
       display: block;
     }
 
+    .date {
+      height: 25vh;
+      right: 50%;
+      top: initial;
+      bottom: 25vh;
+    }
+
     .toCalendar {
-      left: 35%;
-      right: 35%;
-      padding: 8px;
+      right: 50%;
+      top: initial;
+      bottom: 18vh;
     }
     .description {
       margin: 100px 20px;
