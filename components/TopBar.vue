@@ -4,12 +4,22 @@
       class="headerImageDesktop"
       :src="require('~/assets/HEADER_DESKTOP.png')"
     />
-    <img
+    <div
+      class="headerImageMobile"
+      :style="{
+        'background-image':
+          'url(' + require('~/assets/HEADER_MOBILE.png') + ')',
+      }"
+    >
+      <img class="date" :src="require('~/assets/dates.svg')" />
+      <a href="#events" class="toCalendar">VIEW CALENDAR</a>
+    </div>
+    <!-- <img
       class="headerImageMobile"
       :src="require('~/assets/HEADER_MOBILE.png')"
-    />
-    <img class="date" :src="require('~/assets/dates.svg')" />
-    <a href="#events" class="toCalendar">VIEW CALENDAR</a>
+    /> -->
+    <img class="date onlyDesktop" :src="require('~/assets/dates.svg')" />
+    <a href="#events" class="toCalendar onlyDesktop">VIEW CALENDAR</a>
     <div class="description">
       <div class="descriptionLeft">
         <hr />
@@ -92,11 +102,12 @@
   }
 
   .headerImageMobile {
-    width: 100%;
     display: none;
-    height: 85vh;
-    object-fit: cover;
-    object-position: 50% 100%;
+    align-items: center;
+    justify-content: center;
+    background-position: 50% 100%;
+    width: 100%;
+    background-size: cover;
   }
 
   .date {
@@ -114,7 +125,7 @@
     color: black;
     background-color: white;
     padding: 16px 48px;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
     top: 70vh;
     transform: translate(50%, -50%);
@@ -184,20 +195,25 @@
     }
 
     .headerImageMobile {
-      display: block;
+      display: grid;
+      text-align: center;
     }
 
     .date {
-      height: 25vh;
-      right: 50%;
+      position: initial;
+      height: 42%;
+      right: initial;
       top: initial;
-      bottom: 25vh;
+      transform: initial;
+      margin: 350px auto 60px auto;
     }
 
     .toCalendar {
-      right: 50%;
+      position: initial;
+      right: initial;
       top: initial;
-      bottom: 18vh;
+      transform: initial;
+      margin: 0 20px 50px 20px;
     }
     .description {
       margin: 100px 20px;
