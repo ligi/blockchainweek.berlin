@@ -34,7 +34,7 @@ export function getTimestampFromDateAndTime(date, time) {
   const fullDay = day.length === 2 ? day : '0' + day
   const fullMonth = month.length === 2 ? month : '0' + month
   const fullYear = year.length === 2 ? '20' + year : year
-  const dateString = `${fullYear}-${fullMonth}-${fullDay}T${fullHour}:${min}:00+02:00`
+  const dateString = `${fullYear}-${fullMonth}-${fullDay}T${fullHour}:${min}:00+00:00`
   const berlinDate = toDate(dateString)
 
   return berlinDate.getTime()

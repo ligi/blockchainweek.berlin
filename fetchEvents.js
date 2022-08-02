@@ -33,6 +33,11 @@ function normalizeEvent(rawEvent) {
       rawEvent['end time']
     )
 
+    let endTime = convertTime12to24(rawEvent['end time'])
+    if (endTime === '00:00') {
+      endTime = '24:00'
+    }
+
     return {
       id: `${rawEvent['Title of your event']} ${startTimestamp}`,
       eventType: rawEvent['Event type'],
@@ -44,7 +49,7 @@ function normalizeEvent(rawEvent) {
       address: rawEvent.Address,
       url: parseUrls(rawEvent['Event URL']),
       startTime: convertTime12to24(rawEvent['start time']),
-      endTime: convertTime12to24(rawEvent['end time']),
+      endTime,
       categories: rawEvent['Event type']
         .split(',')
         .map((category) => category.trim()),

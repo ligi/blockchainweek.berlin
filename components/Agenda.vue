@@ -188,12 +188,17 @@ export default {
       if (!isTimeForEvent) {
         this.currentDay = this.keyDays[0]
       }
+
+      const upperLimit =
+        this.days[(parseInt(this.currentDay) + 1).toString()] !== undefined
+          ? this.days[(parseInt(this.currentDay) + 1).toString()].timestamp
+          : endForLastDay
+
       this.filteredEvents = eventsToFilter
         .filter((event) => {
-          const upperLimit =
-            this.days[(parseInt(this.currentDay) + 1).toString()] !== undefined
-              ? this.days[(parseInt(this.currentDay) + 1).toString()].timestamp
-              : endForLastDay
+          console.log(event.startTimestamp)
+          console.log(upperLimit)
+          console.log('----')
 
           return (
             event.startTimestamp < upperLimit &&
