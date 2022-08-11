@@ -83,7 +83,7 @@ export default {
       selected: { label: 'all' },
       filteredEvents: [],
       selectedEvents: [],
-      currentDay: '12',
+      currentDay: '11',
       currentEvent: null,
       isModalVisible: false,
       events: [],
@@ -277,7 +277,8 @@ export default {
     }
 
     .day-switch {
-      display: flex;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto auto;
       justify-content: space-around;
       width: 1200px;
       margin-bottom: 50px;
@@ -371,12 +372,14 @@ export default {
         width: 100%;
         .day {
           // background-color: transparent;
+          border-left: 2px solid $black;
           border-top: 2px solid $black;
           border-right: 2px solid $black;
           border-bottom: 2px solid $black;
           width: initial;
           min-width: 50px;
           flex-grow: 1;
+          margin: -1px;
         }
 
         :first-child {
