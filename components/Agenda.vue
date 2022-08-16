@@ -202,7 +202,8 @@ export default {
 
           return (
             event.startTimestamp < upperLimit &&
-            event.endTimestamp > this.days[this.currentDay].timestamp
+            event.endTimestamp >
+              this.days[this.currentDay].timestamp + 6 * 60 * 60 * 1000
           )
         })
         .sort((ev1, ev2) => ev1.startTimestamp - ev2.startTimestamp)
