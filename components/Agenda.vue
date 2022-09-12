@@ -37,7 +37,7 @@
               :current-class="event.favorite ? 'fav' : 'default'"
             />
           </div>
-          <p class="col">{{ event.startTime }} - {{ event.endTime }}</p>
+          <p class="col time">{{ event.startTime }} - {{ event.endTime }}</p>
           <div>
             <div class="trigger col" @click="showModal(event)">
               <p class="trigger title">{{ event.title }}</p>
@@ -241,6 +241,11 @@ export default {
   background-color: $black;
   &.label {
     border: 1px solid $red;
+  }
+
+  .title,
+  .time {
+    color: $blue;
   }
 }
 .agenda {
