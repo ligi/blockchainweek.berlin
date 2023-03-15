@@ -1,5 +1,5 @@
 export const SUBMIT_EVENT_URL =
-  process.env.SUBMIT_EVENT_URL || 'https://forms.gle/w2kaQcspJhbx9qPh9'
+  process.env.SUBMIT_EVENT_URL || 'https://forms.gle/U8hbWxbYwiRMonAfA'
 export const EVENTS_URL =
   process.env.EVENTS_URL ||
   'https://raw.githubusercontent.com/joergkiesewetter/blockchainweek.berlin/main/events.csv'
