@@ -14,7 +14,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Berlin Blockchain Week 2022',
+    title: 'Berlin Blockchain Week 2023',
     htmlAttrs: {
       lang: 'en',
     },
@@ -25,7 +25,7 @@ export default {
       {
         hid: 'title',
         name: 'title',
-        content: 'Berlin Blockchain Week 2022',
+        content: 'Berlin Blockchain Week 2023',
       },
       {
         hid: 'description',
@@ -36,7 +36,7 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Berlin Blockchain Week - 2022',
+        content: 'Berlin Blockchain Week - 2023',
       },
       {
         hid: 'twitter:description',
@@ -57,7 +57,7 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Berlin Blockchain Week - 2022',
+        content: 'Berlin Blockchain Week - 2023',
       },
       {
         hid: 'og:description',

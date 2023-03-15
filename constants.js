@@ -1,6 +1,5 @@
 export const SUBMIT_EVENT_URL =
-  process.env.SUBMIT_EVENT_URL ||
-  'https://forms.gle/w2kaQcspJhbx9qPh9'
+  process.env.SUBMIT_EVENT_URL || 'https://forms.gle/w2kaQcspJhbx9qPh9'
 export const EVENTS_URL =
   process.env.EVENTS_URL ||
   'https://raw.githubusercontent.com/joergkiesewetter/blockchainweek.berlin/main/events.csv'
@@ -24,7 +23,7 @@ export const languages = [
 export const EVENT_CATEGORIES = [
   { label: 'all' },
   { label: 'favorites' },
-  { label: 'conference'},
+  { label: 'conference' },
   { label: 'event/meetup' },
   { label: 'hackathon' },
   { label: 'workshop' },
@@ -35,42 +34,37 @@ export const EVENT_CATEGORIES = [
 export const WEEK = {
   11: {
     key: '11',
-    timestamp: 1662854400000,
-    name: 'SUN',
+    timestamp: 1694390400000,
+    name: 'MON',
   },
   12: {
     key: '12',
-    timestamp: 1662940800000,
-    name: 'MON',
+    timestamp: 1694476800000,
+    name: 'TUE',
   },
   13: {
     key: '13',
-    timestamp: 1663027200000,
-    name: 'TUE',
+    timestamp: 1694563200000,
+    name: 'WED',
   },
   14: {
     key: '14',
-    timestamp: 1663113600000,
-    name: 'WED',
+    timestamp: 1694649600000,
+    name: 'THU',
   },
   15: {
     key: '15',
-    timestamp: 1663200000000,
-    name: 'THU',
+    timestamp: 1694736000000,
+    name: 'FRI',
   },
   16: {
     key: '16',
-    timestamp: 1663286400000,
-    name: 'FRI',
+    timestamp: 1694822400000,
+    name: 'SAT',
   },
   17: {
     key: '17',
-    timestamp: 1663372800000,
-    name: 'SAT',
-  },
-  18: {
-    key: '18',
-    timestamp: 1663459200000,
+    timestamp: 1694908800000,
     name: 'SUN',
-  }
+  },
 }

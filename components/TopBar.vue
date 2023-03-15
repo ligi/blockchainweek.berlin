@@ -11,14 +11,14 @@
           'url(' + require('~/assets/HEADER_MOBILE.png') + ')',
       }"
     >
-      <img class="date" :src="require('~/assets/dates.svg')" />
+      <img class="date" :src="require('~/assets/dates.png')" />
       <a href="#events" class="toCalendar">VIEW CALENDAR</a>
     </div>
     <!-- <img
       class="headerImageMobile"
       :src="require('~/assets/HEADER_MOBILE.png')"
     /> -->
-    <img class="date onlyDesktop" :src="require('~/assets/dates.svg')" />
+    <img class="date onlyDesktop" :src="require('~/assets/dates.png')" />
     <a href="#events" class="toCalendar onlyDesktop">VIEW CALENDAR</a>
     <div class="description">
       <div class="descriptionLeft">
