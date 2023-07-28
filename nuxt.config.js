@@ -128,7 +128,8 @@ export default {
   fontawesome: {
     icons: {
       solid: [
-        'faXmark'
+        'faXmark',
+        'faComments'
       ],
       brands: [
         'faTwitter',

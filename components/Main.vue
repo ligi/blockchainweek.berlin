@@ -2,6 +2,7 @@
   <div class="main">
     <TopBar />
     <Agenda />
+    <Footer />
   </div>
 </template>
 
