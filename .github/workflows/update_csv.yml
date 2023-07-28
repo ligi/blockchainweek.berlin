@@ -25,14 +25,14 @@ jobs:
       - name: Download CSV from Google Docs
         run: |
           # This assumes that your Google Docs file is publicly accessible
-          gdown "https://docs.google.com/spreadsheets/d/1NdCOLpp6u8EHpN6SpeSAwxiJYivawi0YFznZ6AN7fKk/export?format=csv" -O "Berlin Blockchain week 2023 events - events.csv"
+          gdown "https://docs.google.com/spreadsheets/d/1NdCOLpp6u8EHpN6SpeSAwxiJYivawi0YFznZ6AN7fKk/export?format=csv" -O "bbwEvents.csv"
       
       - name: Check for changes and commit
         run: |
-          if ! diff "Berlin Blockchain week 2023 events - events.csv" ./events.csv ; then
+          if ! diff "bbwEvents.csv" ./events.csv ; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            cp "Berlin Blockchain week 2023 events - events.csv" ./events.csv
+            cp "bbwEvents.csv" ./events.csv
             git add ./events.csv
             git commit -m "Update CSV file"
             git push
