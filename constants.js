@@ -32,6 +32,21 @@ export const EVENT_CATEGORIES = [
 ]
 
 export const WEEK = {
+  8: {
+    key: '8',
+    timestamp: 1694131200000,
+    name: 'FRI',
+  },
+  9: {
+    key: '9',
+    timestamp: 1694217600000,
+    name: 'SAT',
+  },
+  10: {
+    key: '10',
+    timestamp: 1694304000000,
+    name: 'SUN',
+  },
   11: {
     key: '11',
     timestamp: 1694390400000,
