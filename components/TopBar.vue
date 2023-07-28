@@ -35,11 +35,11 @@
         </a>
 
         <a
-          href="https://t.me/BerlinBlockchainWeek"
+          href="https://matrix.to/#/%23blockchainweek:tchncs.de"
           target="_blank"
           class="onlyDesktop"
         >
-          <font-awesome-icon :icon="['fab', 'telegram']" />
+          <font-awesome-icon :icon="['far', 'message']" />
         </a>
       </div>
       <div class="descriptionRight">
@@ -75,11 +75,11 @@
         </a>
 
         <a
-          href="https://t.me/BerlinBlockchainWeek"
+          href="https://matrix.to/#/%23blockchainweek:tchncs.de"
           target="_blank"
           class="onlyMobile"
         >
-          <font-awesome-icon :icon="['fab', 'telegram']" />
+          <font-awesome-icon :icon="['far', 'message']" />
         </a>
       </div>
     </div>
